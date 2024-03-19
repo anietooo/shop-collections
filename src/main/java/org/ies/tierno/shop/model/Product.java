@@ -16,6 +16,9 @@ public class Product {
         this.tags = tags;
     }
 
+    public Product() {
+    }
+
     public Integer getIdProduct() {
         return idProduct;
     }

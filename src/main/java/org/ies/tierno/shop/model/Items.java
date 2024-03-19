@@ -11,6 +11,9 @@ public class Items {
         this.amount = amount;
     }
 
+    public Items() {
+    }
+
     public int getProductId() {
         return productId;
     }

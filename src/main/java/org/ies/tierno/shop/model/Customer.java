@@ -7,13 +7,16 @@ public class Customer {
     private String nif;
     private String name;
     private String surname;
-    private List<Orders> ordersList;
+    private List<Order> ordersList;
 
-    public Customer(String nif, String name, String surname, List<Orders> ordersList) {
+    public Customer(String nif, String name, String surname, List<Order> ordersList) {
         this.nif = nif;
         this.name = name;
         this.surname = surname;
         this.ordersList = ordersList;
+    }
+
+    public Customer() {
     }
 
     public String getNif() {
@@ -40,11 +43,11 @@ public class Customer {
         this.surname = surname;
     }
 
-    public List<Orders> getOrdersList() {
+    public List<Order> getOrdersList() {
         return ordersList;
     }
 
-    public void setOrdersList(List<Orders> ordersList) {
+    public void setOrdersList(List<Order> ordersList) {
         this.ordersList = ordersList;
     }
 

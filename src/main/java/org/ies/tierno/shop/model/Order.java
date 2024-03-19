@@ -4,17 +4,20 @@ import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
-public class Orders {
+public class Order {
     private int id;
     private Date date;
     private Double price;
     private List<Items> itemsList;
 
-    public Orders(int id, Date date, Double price, List<Items> itemsList) {
+    public Order(int id, Date date, Double price, List<Items> itemsList) {
         this.id = id;
         this.date = date;
         this.price = price;
         this.itemsList = itemsList;
+    }
+
+    public Order() {
     }
 
     public int getId() {
@@ -53,7 +56,7 @@ public class Orders {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Orders orders = (Orders) o;
+        Order orders = (Order) o;
         return id == orders.id && Objects.equals(date, orders.date) && Objects.equals(price, orders.price) && Objects.equals(itemsList, orders.itemsList);
     }
 
