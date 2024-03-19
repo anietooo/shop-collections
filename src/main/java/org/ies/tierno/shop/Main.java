@@ -10,7 +10,5 @@ public class Main {
         Shop shop = shopReader.read();
 
         // Probar aquí los métodos
-        //prueba
-
     }
 }
