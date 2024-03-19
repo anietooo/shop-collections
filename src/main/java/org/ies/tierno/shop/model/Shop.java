@@ -8,9 +8,9 @@ import java.util.Objects;
 public class Shop {
     private String name;
     private Map<Integer, Product> productsById;
-    private List<Customer> customers;
+    private List<Customers> customers;
 
-    public Shop(String name, Map<Integer, Product> productsById, List<Customer> customers) {
+    public Shop(String name, Map<Integer, Product> productsById, List<Customers> customers) {
         this.name = name;
         this.productsById = productsById;
         this.customers = customers;
@@ -22,12 +22,11 @@ public class Shop {
     /**
      * 1ER METODO
      * Devuelve un customer
-     *
      * @param nif
      * @return
      */
-    public Customer getCustomerByNif(String nif) {
-        for (Customer customer : customers) {
+    public Customers getCustomerByNif(String nif) {
+        for (Customers customer : customers) {
             if (customer.getNif().equals(nif)) {
                 return customer;
             }
@@ -38,15 +37,14 @@ public class Shop {
     /**
      * 2º METODO
      * Devuelve un pedido
-     *
      * @param nif
      * @param id
      * @return
      */
-    public Order getCustomerOrder(String nif, int id) {
-        Customer customer = getCustomerByNif(nif);
+    public Orders getCustomerOrder(String nif, int id) {
+        Customers customer = getCustomerByNif(nif);
         if (customer != null) {
-            for (Order order : customer.getOrdersList()) {
+            for (Orders order : customer.getOrders()) {
                 if (order.getId() == id) {
                     return order;
                 }
@@ -58,7 +56,6 @@ public class Shop {
     /**
      * 3ER METODO
      * Devuelve un producto
-     *
      * @param productId
      * @return
      */
@@ -69,16 +66,15 @@ public class Shop {
     /**
      * 4º METODO
      * Devuelve una lista
-     *
      * @param nif
      * @param id
      * @return
      */
     public List<Product> getProductsInOrder(String nif, int id) {
-        Order order = getCustomerOrder(nif, id);
+        Orders order = getCustomerOrder(nif, id);
         if (order != null) {
             List<Product> productsInOrder = new ArrayList<>();
-            for (Items item : order.getItemsList()) {
+            for (Items item : order.getItems()) {
                 Product product = getProductById(item.getProductId());
                 if (product != null) {
                     productsInOrder.add(product);
@@ -92,7 +88,6 @@ public class Shop {
     /**
      * 5º METODO
      * Saca una lista que tiene la etiqueta dada
-     *
      * @param tag
      * @return
      */
@@ -109,15 +104,14 @@ public class Shop {
     /**
      * 6º METODO
      * Ver el gasto total
-     *
      * @param nif
      * @return
      */
     public double getTotalSpentByCustomer(String nif) {
         double totalSpent = 0;
-        Customer customer = getCustomerByNif(nif);
+        Customers customer = getCustomerByNif(nif);
         if (customer != null) {
-            for (Order order : customer.getOrdersList()) {
+            for (Orders order : customer.getOrders()) {
                 totalSpent += order.getPrice();
             }
         }
@@ -140,11 +134,11 @@ public class Shop {
         this.productsById = productsById;
     }
 
-    public List<Customer> getCustomers() {
+    public List<Customers> getCustomers() {
         return customers;
     }
 
-    public void setCustomers(List<Customer> customers) {
+    public void setCustomers(List<Customers> customers) {
         this.customers = customers;
     }
 

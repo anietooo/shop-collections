@@ -4,13 +4,13 @@ import java.util.Objects;
 import java.util.Set;
 
 public class Product {
-    private Integer idProduct;
+    private Integer id;
     private String name;
     private Double price;
     private Set<String> tags;
 
     public Product(Integer idProduct, String name, Double price, Set<String> tags) {
-        this.idProduct = idProduct;
+        this.id = idProduct;
         this.name = name;
         this.price = price;
         this.tags = tags;
@@ -19,12 +19,12 @@ public class Product {
     public Product() {
     }
 
-    public Integer getIdProduct() {
-        return idProduct;
+    public Integer getId() {
+        return id;
     }
 
-    public void setIdProduct(Integer idProduct) {
-        this.idProduct = idProduct;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -56,18 +56,18 @@ public class Product {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o;
-        return Objects.equals(idProduct, product.idProduct) && Objects.equals(name, product.name) && Objects.equals(price, product.price) && Objects.equals(tags, product.tags);
+        return Objects.equals(id, product.id) && Objects.equals(name, product.name) && Objects.equals(price, product.price) && Objects.equals(tags, product.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idProduct, name, price, tags);
+        return Objects.hash(id, name, price, tags);
     }
 
     @Override
     public String toString() {
         return "Product{" +
-                "idProduct=" + idProduct +
+                "idProduct=" + id +
                 ", name='" + name + '\'' +
                 ", price=" + price +
                 ", tags=" + tags +

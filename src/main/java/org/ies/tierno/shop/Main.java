@@ -10,5 +10,23 @@ public class Main {
         Shop shop = shopReader.read();
 
         // Probar aquí los métodos
+        System.out.println("CUENTA DADO UN NIF");
+        System.out.println(shop.getCustomerByNif("1X"));
+
+        System.out.println("PEDIDO DADO UN NIF Y ID");
+        System.out.println(shop.getCustomerOrder("1X",1));
+
+        System.out.println("PEDIDO DADO UN ID");
+        System.out.println(shop.getProductById(1));
+
+        System.out.println("PRODUCTOS QUE SE HAN PEDIDO DADO UN NIF");
+        System.out.println(shop.getProductsInOrder("1X",1));
+
+        System.out.println("VER PRODUCTOS CON UN TAG");
+        System.out.println(shop.getProductsByTag("Tuerca"));
+
+        System.out.println("DINERO TOTAL GASTADO DADO UN NIF");
+        System.out.println("Gasto total de la persona con NIF 1X = " + shop.getTotalSpentByCustomer("1X"));
+        System.out.println("Gasto total de la persona con NIF 2X = " + shop.getTotalSpentByCustomer("2X"));
     }
 }

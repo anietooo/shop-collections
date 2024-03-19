@@ -4,20 +4,20 @@ import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
-public class Order {
+public class Orders {
     private int id;
     private Date date;
     private Double price;
-    private List<Items> itemsList;
+    private List<Items> items;
 
-    public Order(int id, Date date, Double price, List<Items> itemsList) {
+    public Orders(int id, Date date, Double price, List<Items> itemsList) {
         this.id = id;
         this.date = date;
         this.price = price;
-        this.itemsList = itemsList;
+        this.items = itemsList;
     }
 
-    public Order() {
+    public Orders() {
     }
 
     public int getId() {
@@ -44,25 +44,25 @@ public class Order {
         this.price = price;
     }
 
-    public List<Items> getItemsList() {
-        return itemsList;
+    public List<Items> getItems() {
+        return items;
     }
 
-    public void setItemsList(List<Items> itemsList) {
-        this.itemsList = itemsList;
+    public void setItems(List<Items> items) {
+        this.items = items;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Order orders = (Order) o;
-        return id == orders.id && Objects.equals(date, orders.date) && Objects.equals(price, orders.price) && Objects.equals(itemsList, orders.itemsList);
+        Orders orders = (Orders) o;
+        return id == orders.id && Objects.equals(date, orders.date) && Objects.equals(price, orders.price) && Objects.equals(items, orders.items);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, date, price, itemsList);
+        return Objects.hash(id, date, price, items);
     }
 
     @Override
@@ -71,7 +71,7 @@ public class Order {
                 "id=" + id +
                 ", date=" + date +
                 ", price=" + price +
-                ", itemsList=" + itemsList +
+                ", itemsList=" + items +
                 '}';
     }
 }
