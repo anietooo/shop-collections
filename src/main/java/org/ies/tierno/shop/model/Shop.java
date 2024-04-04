@@ -106,6 +106,7 @@ public class Shop {
      * @return
      */
     public double getTotalSpentByCustomer(String nif) {
+        //Iniciar el gasto total
         double totalSpent = 0;
         Customers customer = getCustomerByNif(nif);
         if (customer != null) {
